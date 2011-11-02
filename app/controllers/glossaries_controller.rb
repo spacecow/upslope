@@ -2,6 +2,12 @@ class GlossariesController < ApplicationController
   before_filter :sort_glossaries, :only => :index
   load_and_authorize_resource
 
+  def show
+    respond_to do |f|
+      f.json {render :json => @glossary.to_json}
+    end
+  end
+
   def index
     respond_to do |f|
       f.html
