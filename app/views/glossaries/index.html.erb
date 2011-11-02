@@ -2,6 +2,7 @@
 <% @glossaries.each do |glossary| %>
   <li>
   <%= glossary.en %>
+  <%= link_to t(:edit), edit_glossary_path(glossary) %>
   </li>
 <% end %>
 </ul>

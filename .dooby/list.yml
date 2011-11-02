@@ -1,3 +1,5 @@
 --- 
 5c3b1f: !ruby/object:Dooby::Task 
   todo: list glossaries in order :done
+"730163": !ruby/object:Dooby::Task 
+  todo: edit glossaries :done

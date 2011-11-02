@@ -5,6 +5,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'formtastic'
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
