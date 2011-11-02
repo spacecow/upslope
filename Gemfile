@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 gem 'execjs'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'formtastic'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -31,7 +32,7 @@ group :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
 end
