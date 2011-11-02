@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20111102021110) do
     t.string   "explanation_ja"
     t.string   "example_en"
     t.string   "example_ja"
+    t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

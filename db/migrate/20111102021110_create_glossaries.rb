@@ -6,6 +6,7 @@ class CreateGlossaries < ActiveRecord::Migration
       t.string :explanation_ja
       t.string :example_en
       t.string :example_ja
+      t.integer :level
 
       t.timestamps
     end
