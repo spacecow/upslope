@@ -1,18 +1,17 @@
 require 'spec_helper'
 
 describe "Glossaries" do
-  describe "edit" do
+  describe "new" do
     before(:each) do
-      @glossary = Factory(:glossary)
-      visit edit_glossary_path(@glossary)
+      visit new_glossary_path
     end
 
-    it "should have fields filled in" do
-      find_field("English").value.should == "factory english"  
-      find_field("Japanese").value.should == "factory japanese"  
-      find_field("Explanation (ja)").value.should == "factory explanation ja"
-      find_field("Example (en)").value.should == "factory example en"
-      find_field("Example (ja)").value.should == "factory example ja"
+    it "should have empty fields" do
+      find_field("English").value.should be_nil
+      find_field("Japanese").value.should be_nil
+      find_field("Explanation (ja)").value.should be_nil
+      find_field("Example (en)").value.should be_nil
+      find_field("Example (ja)").value.should be_nil
     end
 
     it "should edit a glossary" do
@@ -22,8 +21,8 @@ describe "Glossaries" do
         fill_in "Explanation (ja)", :with => "new explanation ja"
         fill_in "Example (en)", :with => "new example en"
         fill_in "Example (ja)", :with => "new example ja"
-        click_button "Update Glossary"
-      end.should change(Glossary, :count).by(0)
+        click_button "Create Glossary"
+      end.should change(Glossary, :count).by(1)
       g = Glossary.last
       g.en.should == "new english"
       g.ja.should == "new japanese"

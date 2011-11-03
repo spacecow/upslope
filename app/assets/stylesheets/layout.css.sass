@@ -1,0 +1,38 @@
+body
+  font: normal 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+a
+  text-decoration: none 
+
+div.clear
+  clear: both
+  height: 0
+  overflow: hidden
+
+table
+  border-collapse: collapse
+  tr
+    &:hover
+      background: #eee 
+    th
+      border: 1px solid black
+      a.desc:after
+        content: "\21E3"
+      a.asc:after
+        content: "\21E1"
+    td
+      padding-left: 2px
+      padding-right: 2px
+      border: 1px solid black
+
+form
+  li
+    list-style-type: none
+    label
+      float: left
+      width: 150px
+      text-align: right
+      margin-right: 5px
+    input
+      width: 600px
+  input.submit
+    margin: 5px 0 0 155px

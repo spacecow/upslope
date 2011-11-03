@@ -1,5 +1,7 @@
 en:
   edit: "Edit"
+  glossary: "Glossary"
+
   formtastic:
     labels:
       en: "English"
@@ -7,3 +9,5 @@ en:
       example_ja: "Example (ja)"
       explanation_ja: "Explanation (ja)"
       ja: "Japanese"
+  label:
+    new: "New %{obj}"
