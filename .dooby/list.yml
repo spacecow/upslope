@@ -3,3 +3,5 @@
   todo: list glossaries in order :done
 "730163": !ruby/object:Dooby::Task 
   todo: edit glossaries :done
+df855f: !ruby/object:Dooby::Task 
+  todo: add date :doing

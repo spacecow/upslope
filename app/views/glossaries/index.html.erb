@@ -1,19 +1,23 @@
 <table>
   <tr>
+    <th><%= sortable 'date' %></th>
     <th><%= sortable 'en', 'English' %></th>
     <th><%= sortable 'ja', 'Japanese' %></th>
     <th><%= sortable 'explanation_ja', 'Explanation (ja)' %></th>
     <th><%= sortable 'example_en', 'Example (en)' %></th>
     <th><%= sortable 'example_ja', 'Example (ja)' %></th>
+    <th><%= sortable 'level' %></th>
     <th>Actions</th>
   </tr>
 <% @glossaries.each do |glossary| %>
   <tr>
-  <td id="english"><%= glossary.en %></td>
-  <td id="japanese"><%= glossary.ja %></td>
-  <td id="explanation_ja"><%= glossary.explanation_ja %></td>
-  <td id="example_en"><%= glossary.example_en %></td>
-  <td id="example_ja"><%= glossary.example_ja %></td>
+  <td id="date"><%= glossary.date_format %></td>
+  <td><%= glossary.en %></td>
+  <td><%= glossary.ja %></td>
+  <td><%= glossary.explanation_ja %></td>
+  <td><%= glossary.example_en %></td>
+  <td><%= glossary.example_ja %></td>
+  <td><%= glossary.level %></td>
   <td id="actions"><%= link_to t(:edit), edit_glossary_path(glossary) %></td>
   <div class="clear"></div>
   </tr>

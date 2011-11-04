@@ -17,6 +17,7 @@ class GlossariesController < ApplicationController
   end
 
   def new
+    @glossary.date = Date.today
   end
 
   def create
@@ -37,6 +38,7 @@ class GlossariesController < ApplicationController
   private
     
     def sort_glossaries
+      return @glossaries = Glossary.where(:date=>params[:date]).order(sort_column+" "+sort_direction) if params[:date]
       @glossaries = Glossary.order(sort_column+" "+sort_direction)
     end
 

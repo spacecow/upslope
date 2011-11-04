@@ -1,8 +1,10 @@
 <%= semantic_form_for @glossary do |f| %>
+  <%= f.input :date, :labels => {:year => nil, :month => nil, :day => nil} %>
   <%= f.input :en %>
   <%= f.input :ja %>
   <%= f.input :explanation_ja %>
   <%= f.input :example_en %>
   <%= f.input :example_ja %>
+  <%= f.input :level %>
   <%= f.submit :class => 'submit' %>
 <% end %>

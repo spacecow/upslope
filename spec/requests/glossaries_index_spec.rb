@@ -3,17 +3,34 @@ require 'spec_helper'
 describe "Glossaries" do
   describe "index" do
     it "lists a glossary" do
-      Factory(:glossary)
+      Factory(:glossary, :date=>"2011-11-4")
       visit glossaries_path
-      table(0).should == ["factory english","factory japanese","factory explanation ja","factory example en","factory example ja","Edit"] 
+      table(0).should == ["Nov. 4","factory english","factory japanese","factory explanation ja","factory example en","factory example ja","1","Edit"] 
+    end
+
+    context "lists a glossary" do
+      before(:each) do
+        Factory(:glossary, :date=>"2011-11-4", :en => "fourth")
+        Factory(:glossary, :date=>"2011-11-5", :en => "fifth")
+      end
+        
+      it "if date is correct" do
+        visit glossaries_path(:date => "2011-11-4")
+        table(0,1).should have_content("fourth") 
+      end
+
+      it "not if date is wrong" do
+        visit glossaries_path(:date => "2011-11-5")
+        table(0,1).should have_content("fifth") 
+      end
     end
 
     it "list glossaries in order" do
       Factory(:glossary, :en => "second", :level => 2)
       Factory(:glossary, :en => "first", :level => 1)
       visit glossaries_path
-      table(0,0).should have_content("first") 
-      table(1,0).should have_content("second") 
+      table(0,1).should have_content("first") 
+      table(1,1).should have_content("second") 
     end
 
     it "link to edit page" do

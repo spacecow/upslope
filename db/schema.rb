@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111102021110) do
+ActiveRecord::Schema.define(:version => 20111104011247) do
 
   create_table "glossaries", :force => true do |t|
     t.string   "en"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20111102021110) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
   end
 
 end
