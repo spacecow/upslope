@@ -20,7 +20,7 @@ describe "Glossaries" do
       end
 
       it "not if date is wrong" do
-        visit glossaries_path(:date => "2011-11-5")
+        visit glossaries_path(:date => "11/5/11")
         table(0,1).should have_content("fifth") 
       end
     end

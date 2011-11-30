@@ -38,7 +38,13 @@ class GlossariesController < ApplicationController
   private
     
     def sort_glossaries
-      return @glossaries = Glossary.where(:date=>params[:date]).order(sort_column+" "+sort_direction) if params[:date]
+      date = params[:date]
+      if date 
+        if data = date.match(/(\d*)\/(\d*)\/(\d*)/)
+          date = "20#{data[1]}-#{data[3]}-#{data[2]}" 
+        end
+        return @glossaries = Glossary.where(:date=>date).order(sort_column+" "+sort_direction)
+      end 
       @glossaries = Glossary.order(sort_column+" "+sort_direction)
     end
 
